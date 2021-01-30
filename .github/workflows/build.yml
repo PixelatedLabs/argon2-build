@@ -20,13 +20,6 @@ jobs:
       with:
         submodules: recursive
 
-    - name: a
-      run: ls
-
-    - name: b
-      working-directory: ./argon2
-      run: ls
-
-    - name: Make
-      working-directory: ./argon2
+    - name: Build
+      working-directory: argon2
       run: make test

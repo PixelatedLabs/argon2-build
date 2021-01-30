@@ -64,6 +64,10 @@ jobs:
       with:
         submodules: recursive
 
+    - name: Results
+      shell: powershell
+      run: tree /F
+
     - name: Install Windows 8.1 SDK
       shell: powershell
       run: |
@@ -78,8 +82,5 @@ jobs:
       run: msbuild
 
     - name: Results
-      run: ls
-
-    - name: Results
-      working-directory: argon2
-      run: ls
+      shell: powershell
+      run: tree /F

@@ -22,6 +22,10 @@ jobs:
 
     - name: Build
       working-directory: argon2
+      run: make
+
+    - name: Test
+      working-directory: argon2
       run: make test
 
     - name: Results
@@ -43,6 +47,10 @@ jobs:
 
     - name: Build
       working-directory: argon2
+      run: make
+
+    - name: Test
+      working-directory: argon2
       run: make test
 
     - name: Results
@@ -63,6 +71,10 @@ jobs:
         submodules: recursive
 
     - name: Build
+      working-directory: argon2
+      run: make
+
+    - name: Test
       working-directory: argon2
       run: make test
 

@@ -16,6 +16,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
+    - name: a
+      run: ls
+
+    - name: b
+      working-directory: ./argon2
+      run: ls
+
     - name: Make
       working-directory: ./argon2
       run: make test

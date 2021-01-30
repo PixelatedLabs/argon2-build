@@ -45,3 +45,21 @@ jobs:
     - name: Results
       working-directory: argon2
       run: ls
+
+  windows:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: Build
+      working-directory: argon2
+      run: make test
+
+    - name: Results
+      working-directory: argon2
+      run: ls

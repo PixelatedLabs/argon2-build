@@ -20,6 +20,9 @@ jobs:
     - name: a
       run: ls
 
+    - name: c
+      run: cat argon2
+
     - name: b
       working-directory: ./argon2
       run: ls

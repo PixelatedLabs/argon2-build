@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ master ]
 
+  # Allows running this action manually
+  workflow_dispatch:
+
 jobs:
   build:
 

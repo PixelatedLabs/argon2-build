@@ -29,9 +29,6 @@ jobs:
       run: make test
 
     - name: Results
-      run: ls
-
-    - name: Results
       working-directory: argon2
       run: ls
 
@@ -54,9 +51,6 @@ jobs:
       run: make test
 
     - name: Results
-      run: ls
-
-    - name: Results
       working-directory: argon2
       run: ls
 
@@ -72,11 +66,7 @@ jobs:
 
     - name: Build
       working-directory: argon2
-      run: make
-
-    - name: Test
-      working-directory: argon2
-      run: make test
+      run: msbuild
 
     - name: Results
       run: ls

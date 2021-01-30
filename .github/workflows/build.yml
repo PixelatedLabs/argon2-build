@@ -28,26 +28,11 @@ jobs:
       working-directory: argon2
       run: make test
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload Library
+      uses: actions/upload-artifact@v2
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Linux ${{ github.ref }}
-        draft: false
-        prerelease: false
-
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: argon2/libargon2.so.1
-        asset_name: libargon2.so.1
-        asset_content_type: application/octet-stream
+        name: libargon2.so.1
+        path: argon2/libargon2.so.1
 
   mac:
 
@@ -67,26 +52,11 @@ jobs:
       working-directory: argon2
       run: make test
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload Library
+      uses: actions/upload-artifact@v2
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Mac ${{ github.ref }}
-        draft: false
-        prerelease: false
-
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: argon2/libargon2.1.dylib
-        asset_name: libargon2.1.dylib
-        asset_content_type: application/octet-stream
+        name: libargon2.1.dylib
+        path: argon2/libargon2.1.dylib
 
   windows:
 
@@ -111,23 +81,8 @@ jobs:
       working-directory: argon2
       run: msbuild
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload Library
+      uses: actions/upload-artifact@v2
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Windows ${{ github.ref }}
-        draft: false
-        prerelease: false
-
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: argon2/vs2015/build/Argon2OptDll.dll
-        asset_name: Argon2OptDll.dll
-        asset_content_type: application/octet-stream
+        name: Argon2OptDll.dll
+        path: argon2/vs2015/build/Argon2OptDll.dll
